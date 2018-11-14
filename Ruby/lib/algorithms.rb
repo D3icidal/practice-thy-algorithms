@@ -3,8 +3,25 @@
 # Keep repeating until there is only one digit in the result.
 # The result is called a 'digital root'.
 # Do not use string conversion within your method.
-def digital_root(number)
-
+def digital_root(number)  #example input: 129 => 12 => 3
+  sum = 0
+  num = number.to_i
+  # puts "\t\t\tDIGITAL ROOT: num: #{num}"
+  if num < 10 #if already single digit, return
+    return num
+  else
+    while ( num > 0 ) #while there are still digits to process
+      digits = (Math.log10(num)).floor.to_f #trailing digits
+      sum += (num / ( 10** Math.log10(num).floor )).to_i #adds first digit to sum
+      num = num % (10** digits) #set num to just the unprocessed digits
+      # puts "#{num} #{sum} "
+    end
+    if sum >= 10 #recursion if sum still needs processing
+      digital_root(sum)
+    else
+      sum
+    end
+  end
 end
 
 # Write a function that takes a message and an increment amount.
