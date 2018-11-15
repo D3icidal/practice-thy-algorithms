@@ -29,7 +29,16 @@ end
 # Assume lowercase and no punctuation.
 # Preserve spaces.
 def caesar_cipher(string, shift)
-
+  result = ''
+  string.each_char { |chr|
+    unless chr == ' '
+      shift.times {
+        chr.succ!
+      }
+    end
+    result += chr.chars.last
+  }
+    result
 end
 
 # Write a function that takes two strings.
