@@ -68,7 +68,14 @@ end
 # Write a function that takes an array of integers and returns their sum.
 # Use recursion.
 def sum_rec(numbers)
-
+  # p numbers
+  if numbers.length < 2
+    return numbers.first
+  else
+    first = numbers.first
+    numbers.delete_at(0)
+    first + sum_rec(numbers)
+  end
 end
 
 # Write a function that takes n, the length of the sequence.

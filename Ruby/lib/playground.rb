@@ -20,6 +20,18 @@ def common_substrings(string_one, string_two)
   return resultarray.max_by { |x| x.length }
 end
 
+def sum_rec(numbers)
+  if numbers.length < 2
+    return numbers.first
+  else
+    numbers.delete_at(0)
+    numbers.first + sum_rec(numbers)
+  end
+end
 
 
-p common_substrings('dabcdef', 'dpoibdefcot')  #'abcdef', 'poibcot' => 'bc'
+
+# =>  RUNNERS
+
+puts sum_rec([1,2,3,4]) # => 10
+puts common_substrings('dabcdef', 'dpoibdefcot')  #'abcdef', 'poibcot' => 'bc'
