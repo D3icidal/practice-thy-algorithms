@@ -81,7 +81,13 @@ end
 # Write a function that takes n, the length of the sequence.
 # Return the first n elements from the Fibonacci sequence as an array.
 def fibs(n)
-
+  i = 2
+  arr = [0,1,1]
+  while i < n-  1
+    arr << arr[i]+arr[i-1]
+    i += 1
+  end
+  arr
 end
 
 # Write a function that takes a string.

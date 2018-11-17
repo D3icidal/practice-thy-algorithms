@@ -29,9 +29,18 @@ def sum_rec(numbers)
   end
 end
 
+def fibs(n)
+  i = 1
+  arr = [1,1]
+  while i < n-1
+    arr << arr[i]+arr[i-1]
+    i += 1
+  end
+  arr
+end
 
 
 # =>  RUNNERS
-
+p fibs (5)
 puts sum_rec([1,2,3,4]) # => 10
 puts common_substrings('dabcdef', 'dpoibdefcot')  #'abcdef', 'poibcot' => 'bc'
